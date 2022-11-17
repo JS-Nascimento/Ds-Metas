@@ -38,14 +38,18 @@ public class SmsService {
 		
 		String formattedAmount = new DecimalFormat("#,##0.00").format(sale.getAmount());
 		
+		StringBuilder sb = new StringBuilder();
+		
 		String msg = "O vendedor " + sale.getSellerName() + " foi destaque em " + dateSale + " com um total de R$ " + formattedAmount;
+		
+		sb.append(msg);
 
 		Twilio.init(twilioSid, twilioKey);
 
 		PhoneNumber to = new PhoneNumber(twilioPhoneTo);
 		PhoneNumber from = new PhoneNumber(twilioPhoneFrom);
 
-		Message message = Message.creator(to, from, msg).create();
+		Message message = Message.creator(to, from, sb.toString()).create();
 
 		System.out.println(message.getSid());
 	}
