@@ -40,7 +40,7 @@ public class SmsService {
 		
 		StringBuilder sb = new StringBuilder();
 		
-		String msg = "O vendedor " + sale.getSellerName() + " foi destaque em " + dateSale + " com um total de R$ " + formattedAmount;
+		String msg = "O vendedor " + sale.getSellerName() + " foi destaque em " + dateSale + " com um total de R$ " + sale.getAmount();
 		
 		sb.append(msg);
 

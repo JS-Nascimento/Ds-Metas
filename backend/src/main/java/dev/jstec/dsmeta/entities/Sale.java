@@ -2,6 +2,7 @@ package dev.jstec.dsmeta.entities;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,8 @@ public class Sale {
 	private String sellerName;
 	private Integer visited;
 	private Integer deals;
+	
+	@Column(scale=2)
 	private Double amount;
 	private LocalDate date;
 	
